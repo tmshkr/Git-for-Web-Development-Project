@@ -150,9 +150,38 @@ A block element takes up 100% of available width and starts on a new line.
 An inline element only takes up as much width as necessary and does not start a new line.
 
 2. What happens when an element is positioned absolutely?
-An absolutely positioned element is positioned relative to its nearest positioned ancestor.
+An absolutely positioned element is removed from the normal document flow
+and positioned relative to its nearest positioned ancestor.
 
+3. How do I make an element take up only the amount of space it needs but also have the ability to give it a width?
+display: inline-block;
 
-    3. How do I make an element take up only the amount of space it needs but also have the ability to give it a width? 
-    4. Name 3 elements that are diplay block by default, 2 elements that are display inline by default and 1 element that is display inline-block by default
-    5. In your own words, explain the box model. What is the fix for the box model? 
+4. Name 3 elements that are diplay block by default, 2 elements that are display inline by default and 1 element that is display inline-block by default.
+
+Block-level element examples:
+<div>
+<h1>
+<p>
+
+Inline element examples:
+<img>
+<span>
+
+Inline-block element examples:
+<button>
+
+5. In your own words, explain the box model. What is the fix for the box model?
+
+HTML elements are displayed according to the box model, where the element's actual
+height and width are determined by the `height`, `width`, `padding`, and `border` properties.
+
+The box-sizing property determines how an element's actual width and height are determined
+from the `height`, `width`, `padding`, and `border` properties. The default value is `content-box`,
+which determines the actual size of the element according to the formula:
+
+`width` + `padding` + `border` = actual width
+`height` + `padding` + `border` = actual height
+
+Alternatively, `border-box` renders the element so that the element's actual size is the same as
+its `height` and `width` properties, with the padding and border subtracting from the width and height,
+so that the inner content of the box is less than its `width` and `height` properties.
